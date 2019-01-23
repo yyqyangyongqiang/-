@@ -4,3 +4,238 @@ header {
     padding: 5px 0;
     background: #1C2327;
 }
+.navbox {
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+}
+.navbox .logo {
+    float: left;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: 60px;
+}
+/*设置a标签的文字颜色 */
+.navbox .logo a {
+    color: #fff;
+}
+/* 设置鼠标放置时的样式 */
+.navbox ul .sub {
+    display: none;
+    background-color: #1C2327;
+    width: 100%;
+    height: 230%;   
+    position: absolute;
+    left: 0px;
+    top: 50px;
+}
+.navbox ul .sub li {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 30%;
+    color: #fff;
+}
+/* 设置鼠标放置  显示下拉菜单 */
+.navbox nav .menu:hover .sub {
+    display: block;
+}
+/* 设置鼠标放置 变换颜色 */
+.navbox a:hover {
+    color: #00c1de;
+}
+nav {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: auto;
+}
+nav ul {
+    height: 100%;
+}
+nav ul li{
+    position: relative;
+    float: left;
+    font-size: 15px;
+    padding: 0px 20px;
+}
+/* 设置字体的颜色为白色 */
+nav ul li a {
+    color: #fff;
+}
+
+/* 设置选中时的样式 */
+.selected {
+    color: #00c1de;
+}
+/* 设置放大镜的图标 */
+.navbox .iconfont {
+    margin-top: 8px;
+    width: 10%;
+    height: 60%;
+    float: right;
+    border: 1px solid #bebebe;
+    border-radius: 20px;
+    padding: 2px 15px;
+}
+.navbox .iconfont input {
+    margin-top: 5px;
+    width: 75%;
+    height: 87%;
+    font-size: 15px;
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+    font-weight: 300;
+}
+.navbox .iconfont input:focus .iconfont {
+    background-color:yellow;
+} 
+.navbox .iconfont i {
+    padding: 1px;
+    margin: 0px;
+    border : 0px;
+    margin-top: 2px;
+    font-size: 20px;
+    color: #bebebe;
+}
+
+/* 导航条完成 */
+/* 页面整体 */
+article {
+    width: 80%;
+    height: 800px;
+    padding: 0px 10%;
+    background-color: red;
+}
+/* 页面左边部分 */
+article .lbox {
+    margin: 0px;
+    padding: 20px;
+    width: 75%;
+    height: 100%;
+    display: inline-block;
+    background-color: yellow;
+    box-sizing: border-box;
+}
+article .lbox .banner {
+    width: 100%;
+    height: 260px;
+}
+article .lbox .banner .lunbobox {
+    width: 65%;
+    height: 100%;
+    background-color: #563194;
+    float: left;
+}
+article .lbox .banner .headline {
+    width: 33%;
+    height: 100%;
+    background-color: #123456;
+    float: right;
+    position: relative;
+}
+article .lbox .banner .headline div {
+    width: 100%;
+    height: 47%;
+    background-color: #491219;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+/* 利用定位 把下边的元素 定位到下边 */
+article .lbox .banner .headline div:last-child {
+    position: absolute;
+    bottom: 0px;
+}
+/* <!-- 个人播客部分 --> */
+article .lbox .whitebg {
+    width: 100%;
+                                                         height: 330px;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+article .lbox .whitebg .ul {
+    width: 100%;
+    float: left;
+    border-bottom:#e4e3e3 1px solid;
+}
+article .lbox .whitebg .ul li {
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+article .lbox .whitebg .newstab {
+    width: 100%;
+    height: 85%;
+    margin-top: 43px;
+    background-color: red;
+}
+/*  个人播客部分 ->左边部分 */
+article .lbox .whitebg .newstab .newspic {
+    width: 30%;
+    height: 100%;
+    background-color: #369852;
+    position: relative;
+    float: left;
+}
+article .lbox .whitebg .newstab .newspic div {
+    width: 100%;
+    height: 45%;
+    background-color: #456313;
+    border-radius: 4px; 
+}
+article .lbox .whitebg .newstab .newspic div:last-child {
+    position: absolute;
+    bottom: 0px;
+}
+/* 个人播客部分 ->右边部分 */
+article .lbox .whitebg .newstab .newslist {
+    width: 67%;
+    height: 100%;
+    background-color: #fff;
+    float: right;
+}
+article .lbox .whitebg .newstab .newslist li {
+    margin: 0px 10px 8px 10px;
+    color: #333;
+}
+article .lbox .whitebg .newstab .newslist li a {
+    font-size: 15px;
+    font-weight: 500;
+}
+article .lbox .whitebg .newstab .newslist li p {
+    display: none;
+}
+article .lbox .whitebg .newstab .newslist li i {
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    background-color: #8B8B83;
+}
+.xuanzhong  {
+    border-bottom: 1.5px solid #000;
+}
+/* 右边部分 */
+article .rbox {
+    margin: 0px;
+    padding: 0px;
+    width: 24%;
+    height: 100%;
+    display: inline-block;
+    background-color: blue;
+}
