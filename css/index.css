@@ -120,6 +120,7 @@ article .lbox {
     display: inline-block;
     background-color: yellow;
     box-sizing: border-box;
+    float: left;
 }
 article .lbox .banner {
     width: 100%;
