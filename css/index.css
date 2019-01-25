@@ -111,6 +111,15 @@ article {
     height: 100%;
     padding: 0px 10%;
 }
+
+/*设置页面 图片放大的效果 */
+article img {
+    cursor: pointer;
+	transition: all 0.6s;
+}
+article .whitebg img:hover {
+    transform: scale(1.2);
+}
 /* 页面左边部分 */
 article .lbox {
     margin: 0px;
@@ -118,7 +127,6 @@ article .lbox {
     width: 75%;
     height: 100%;
     display: inline-block;
-    background-color: yellow;
     box-sizing: border-box;
     float: left;
 }
@@ -126,16 +134,44 @@ article .lbox .banner {
     width: 100%;
     height: 260px;
 }
+/* 轮播图部分 */
+.lunboxuanzhong {
+    display: block !important;
+}
 article .lbox .banner .lunbobox {
     width: 65%;
     height: 100%;
     background-color: #563194;
     float: left;
+    position: relative;
 }
+article .lbox .banner .lunbobox ul {
+    width: 100%;
+    height: 100%;
+}
+article .lbox .banner .lunbobox li{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+article .lbox .banner .lunbobox ul li img {
+    width: 100%;
+    height: 100%;
+}
+article .lbox .banner .lunbobox li:nth-child(4){
+    display: none;
+}
+article .lbox .banner .lunbobox li:nth-child(3){
+    display: none;
+}
+
+
+/* 右边图片部分 */
 article .lbox .banner .headline {
     width: 33%;
     height: 100%;
-    background-color: #123456;
     float: right;
     position: relative;
 }
@@ -145,6 +181,31 @@ article .lbox .banner .headline div {
     background-color: #491219;
     box-sizing: border-box;
     border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.6s;
+    overflow: hidden;
+    position: relative;
+}
+article .lbox .banner .headline div img {
+    width: 100%;
+    height: 100%;
+}
+article .lbox .banner .headline div span {
+    position: absolute;
+    bottom: 30%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #fff;
+    
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow: clip;
+}
+article .lbox .banner .headline div:hover img {
+    transform: scale(1.2);
 }
 /* 利用定位 把下边的元素 定位到下边 */
 article .lbox .banner .headline div:last-child {
@@ -173,18 +234,15 @@ article .lbox .whitebg .ul li {
     line-height: 40px;
     text-align: center;
 }
-
 article .lbox .whitebg .newstab {
     width: 100%;
     height: 85%;
     margin-top: 20px;
-    background-color: red;
 }
 /*  个人播客部分 ->左边部分 */
 article .lbox .whitebg .newstab .newspic {
     width: 30%;
     height: 100%;
-    background-color: #369852;
     display: inline-block;
 }
 article .lbox .whitebg .newstab .newspic div {
@@ -192,10 +250,40 @@ article .lbox .whitebg .newstab .newspic div {
     height: 110px;
     background-color: #456313;
     border-radius: 4px; 
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    
+    cursor: pointer;
+	transition: all 0.6s;
+}
+article .lbox .whitebg .newstab .newspic div:hover img{
+    transform: scale(1.2);
+}
+article .lbox .whitebg .newstab .newspic div img {
+    width: 100%;
+    height: 100%;
+}
+article .lbox .whitebg .newstab .newspic div span {
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 30%;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow: clip;
 }
 article .lbox .whitebg .newstab .newspic div:last-child {
     margin-top: 10px;
 }
+
 /* 个人播客部分 ->右边部分 */
 article .lbox .whitebg .newstab .newslist {
     width: 67%;
@@ -204,9 +292,59 @@ article .lbox .whitebg .newstab .newslist {
     float: right;
 }
 article .lbox .whitebg .newstab .newslist li {
-    margin: 0px 10px 8px 10px;
+    padding: 0px 10px 8px 10px;
     color: #333;
 }
+
+/* 鼠标放置时的样式 */
+article .lbox .whitebg .newstab .newslist li:hover {
+    height: 97px;
+    background-color: #f7f7f7;
+}
+article .lbox .whitebg .newstab .newslist li:hover i{
+    background-color: #000;
+    color: #fff;    
+}
+article .lbox .whitebg .newstab .newslist li:hover a {
+    font-weight: bold;
+    color: #000;
+}
+article .lbox .whitebg .newstab .newslist li:hover p {
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow: clip;
+}
+
+/* 设置默认显示第一个 */
+article .lbox .whitebg .newstab .newslist li:nth-child(1) {
+     height: 97px;
+      background: #f7f7f7;
+}
+article .lbox .whitebg .newstab .newslist li:nth-child(1) a { 
+    color: #000;
+     font-weight: bold
+}
+article .lbox .whitebg .newstab .newslist li:nth-child(1) i {
+     background: #000;
+    color: #fff;
+}
+article .lbox .whitebg .newstab .newslist li:nth-child(1) p{
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow: clip;
+}
+/* 默认的样式 */
 article .lbox .whitebg .newstab .newslist li a {
     font-size: 15px;
     font-weight: 500;
@@ -224,10 +362,60 @@ article .lbox .whitebg .newstab .newslist li i {
     line-height: 18px;
     background-color: #8B8B83;
 }
+
+/* 鼠标放置 第一个li 回复默认的样式 */
+article .lbox .whitebg .newstab .newslist:hover li:nth-child(1) a {
+    font-size: 15px;
+    font-weight: 500;
+}
+article .lbox .whitebg .newstab .newslist:hover li:nth-child(1)  p {
+    display: none;
+}
+article .lbox .whitebg .newstab .newslist:hover li:nth-child(1)  i {
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    background-color: #8B8B83;
+} 
+article .lbox .whitebg .newstab .newslist:hover li:nth-child(1) {
+    padding: 0px 10px 8px 10px;
+    color: #333;
+    background-color: transparent;
+    height: 23px;
+}
+
+/* 单独给第一个li 设置样式 */
+article .lbox .whitebg .newstab .newslist li:nth-child(1):hover {
+    height: 97px;
+     background: #f7f7f7;
+}
+article .lbox .whitebg .newstab .newslist li:nth-child(1):hover a { 
+   color: #000;
+    font-weight: bold
+}
+article .lbox .whitebg .newstab .newslist li:nth-child(1):hover i {
+    background: #000;
+   color: #fff;
+}
+article .lbox .whitebg .newstab .newslist li:nth-child(1):hover p{
+   display: inline-block;
+   line-height: 24px;
+   font-size: 14px;
+   display:-webkit-box;
+   -webkit-line-clamp:2;
+   -webkit-box-orient:vertical;
+   overflow:hidden;
+   text-overflow: clip;
+}
+
+/* 选中的样式 */
 .xuanzhong  {
     border-bottom: 1.5px solid #000;
 }
-
  /* 特别推荐部分的样式  头部部分
    此处的border属性和 上边的ul属性一样*/
 .htitle {
@@ -254,11 +442,14 @@ article .lbox .whitebg .newstab .newslist li i {
     display: flex;
     flex-wrap:wrap;
 }
+.whitebg .content li:hover {
+    box-shadow: 5px 5px 5px #CCC;
+}
 .whitebg .content li {
     width: 33.05%;
-    border: 1px solid #000;
     box-sizing: border-box;
     padding: 20px;
+    overflow: hidden;
     
 }
 .whitebg .content li img {
@@ -290,6 +481,9 @@ article .lbox .whitebg .newstab .newslist li i {
     color: #369852;
 }
 /* 广告部分 */
+.guanggao  {
+    overflow: hidden;
+}
 .guanggao img{
     width: 100%;
     height: 100px;
@@ -326,6 +520,7 @@ article .lbox .whitebg .newstab .newslist li i {
     width: 23%;
     height: 120px;
     background-color: yellow;
+    overflow: hidden;
 }
 .whitebg .conList .have .Listcontent div:first-child img {
     width: 100%;
@@ -338,6 +533,9 @@ article .lbox .whitebg .newstab .newslist li i {
     display: inline-block;
     float: right;
     margin-top: 10px;
+}
+.whitebg .conList .have .Listcontent div:last-child p:first-child {
+    line-height: 17px;
 }
 .whitebg .conList .have .Listcontent .footer {
     display: inline-block;
@@ -356,6 +554,10 @@ article .lbox .whitebg .newstab .newslist li i {
     display: inline-block;
     border-radius: 50%;
     margin-top: 4px
+}
+/* 为 p 标签添加样式 */
+.notImgP {
+    line-height: 17px;
 }
 .sheji {
     color: #096;
@@ -399,7 +601,6 @@ article .rbox {
     width: 24%;
     height:2000px;
     display: inline-block;
-    background-color: blue;
 }
 .card {
     margin-top: 20px;
@@ -428,31 +629,38 @@ article .rbox {
     margin-bottom: 10px;
 }
 .card ol li {
-    width: 100%;
-    height: 100%;
+    width: 99%;
+    height: 90%;
     border-radius: 50%;
     background-color: yellow;
     margin: 8px;
+    box-shadow:inset  0px 1px 1px #CCC;
+
 }
 /* 最近更新 */
 .new {
     margin-top: 20px;
     width: 100%;
-    background-color: rgba(42,42,42,1);
     padding: 20px;
     box-sizing: border-box;
     color: #d0d2d4;
     margin-bottom: 20px;
+    background-color: #fff;
+}
+.mingpian {
+    background-color: rgba(42,42,42,1);
 }
 .new .lately {
     padding: 0px;
     width: 100%;
-    border-bottom: 1px dotted  #333;
+    border-bottom: 1px solid  #eee;
+    font-size: 17px;
+    color: #333;
 }
 .new .lately li {
     line-height: 31px;
     margin: 0px;
-    width: 20%;
+    width: 31%;
 }
 .new .list {
     margin-top: 20px;
@@ -476,7 +684,6 @@ article .rbox {
     display: inline-block;
     width: 100%;
     height: 130px;
-    background-color: red;
     margin: 20px 0px;
 }
 .new .ranking  {
@@ -491,9 +698,16 @@ article .rbox {
     text-overflow: ellipsis;
     white-space:nowrap;
     overflow:hidden;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #fff;
     padding:5px 0;
+    list-style-type: disc;
+}
+.new .ranking li:nth-child(2n){
+    background-color: #eee;
+}
+.new .ranking li a {
+    color: #000;
 }
 .gray {
     background-color: gray;
@@ -501,19 +715,25 @@ article .rbox {
 /* 站长推荐 */
 .new .tuijian {
     width: 100%;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 .new .tuijian  li {
     width: 100%;
     height: 100%;
     background-color: #fff;
+    border-radius: 4px;
 }
+.new .tuijian  li:hover {
+    background-color: #eee;
+} 
 .new .tuijian  a>:first-child{
-    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .new .tuijian  a>:last-child{
     display: inline-block;
-    width: 70%;
+    width: 68%;
     float: right;
     line-height: 20px;
     font-size: 13px;
@@ -525,6 +745,8 @@ article .rbox {
     max-height: 35px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: #333;
+
 }
 .new .tuijian  span>:first-child  {
     width: 70px;
@@ -532,6 +754,7 @@ article .rbox {
 }
 .new .smallGg {
     width: 100%;
+    overflow: hidden;
 }
 .new .smallGg img {
     width: 100%;
@@ -545,18 +768,33 @@ article .rbox {
     display: inline-block;
     width: 100%;
     margin:  10px 0;
-    background-color: red;
     font-size: 15px;
     list-style-type: disc;
+    color: #333;
+}
+.new .love li a {
+    color: #333;
 }
 /* 站点信息 */
 .new .zhandian {
+    margin-top: 20px;
     width: 100%;
     height: 100%;
     font-size: 15px;
+    color: #333;
 }
 .new .zhandian li {
     margin: 10px 0;
+}
+.new .zhandian a {
+    padding: 10px;
+    border-radius: 5px;
+}
+.new .zhandian a:hover {
+    background-color: #eee;
+}
+.new .zhandian li a {
+    color: #333;
 }
 .new  img {
     width: 80%;
